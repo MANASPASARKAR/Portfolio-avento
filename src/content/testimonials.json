@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "quote": "This agency completely transformed our online presence. The new site is blazing fast and the automation workflows have saved us countless hours.",
+    "author": "Jane Doe",
+    "role": "CEO",
+    "company": "TechStart Inc."
+  },
+  {
+    "id": 2,
+    "quote": "Professional, responsive, and incredibly talented. They understood exactly what we needed and delivered beyond our expectations.",
+    "author": "John Smith",
+    "role": "Marketing Director",
+    "company": "Growth Co."
+  }
+]

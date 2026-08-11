@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "ecommerce-automation",
+    "title": "E-Commerce Workflow Automation",
+    "description": "Automated order fulfillment and inventory tracking system.",
+    "fullDescription": "A comprehensive automation solution linking a Shopify storefront with a custom ERP. Reduced manual entry by 90% and accelerated fulfillment times.",
+    "techStack": ["Next.js", "Zapier", "Node.js", "Shopify API"],
+    "githubUrl": "https://github.com/placeholder/repo-1",
+    "image": "/placeholder-project-1.jpg"
+  },
+  {
+    "slug": "marketing-agency-redesign",
+    "title": "Marketing Agency Redesign",
+    "description": "High-performance portfolio site with custom animations.",
+    "fullDescription": "Complete brand overhaul and web redesign for a top-tier marketing agency, featuring smooth scroll physics and complex GSAP animations.",
+    "techStack": ["React", "GSAP", "Tailwind CSS"],
+    "githubUrl": "https://github.com/placeholder/repo-2",
+    "image": "/placeholder-project-2.jpg"
+  },
+  {
+    "slug": "saas-dashboard",
+    "title": "SaaS Analytics Dashboard",
+    "description": "Real-time data visualization dashboard for a B2B SaaS platform.",
+    "fullDescription": "Built a scalable and responsive dashboard interface to display complex datasets in real-time, focusing on user experience and accessibility.",
+    "techStack": ["Next.js", "TypeScript", "Recharts", "Tailwind CSS"],
+    "githubUrl": "https://github.com/placeholder/repo-3",
+    "image": "/placeholder-project-3.jpg"
+  },
+  {
+    "slug": "crm-integration",
+    "title": "Custom CRM Integration",
+    "description": "Seamless data syncing between Hubspot and internal tools.",
+    "fullDescription": "Developed a robust middleware service to synchronize customer data bidirectionally between Hubspot CRM and a legacy internal management system.",
+    "techStack": ["Python", "FastAPI", "Hubspot API"],
+    "githubUrl": "https://github.com/placeholder/repo-4",
+    "image": "/placeholder-project-4.jpg"
+  }
+]

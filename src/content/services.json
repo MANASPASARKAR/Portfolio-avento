@@ -1,0 +1,17 @@
+[
+  {
+    "id": "web-design",
+    "title": "Custom Web Design & Development",
+    "description": "High-performance, beautifully designed websites built for conversion and brand authority."
+  },
+  {
+    "id": "automation",
+    "title": "Workflow Automation",
+    "description": "Custom scripts and integrations to eliminate manual tasks and streamline operations."
+  },
+  {
+    "id": "seo",
+    "title": "SEO & Content Strategy",
+    "description": "Data-driven optimization and content architectures that rank and drive organic traffic."
+  }
+]
