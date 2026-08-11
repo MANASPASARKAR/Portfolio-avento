@@ -1,28 +1,30 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
-import { Container } from "@/components/ui/container"
+import * as React from "react";
+import Link from "next/link";
+import { Container } from "@/components/ui/container";
+import { ThemeToggle } from "@/components/providers/theme-provider";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Projects", href: "/projects" },
   { name: "Services", href: "/services" },
-]
+  { name: "Work", href: "/projects" },
+  { name: "About", href: "/about" },
+];
 
 export function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-surface/80 backdrop-blur-xl transition-colors duration-300">
       <Container>
-        <div className="flex h-16 md:h-20 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           
-          {/* Logo Placeholder */}
+          {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="font-heading text-xl font-bold tracking-tight">
-              [Agency Logo]
+            <Link href="/" className="group flex items-center gap-2 font-heading text-xl font-bold tracking-wider text-foreground">
+              <span>AVENTO</span>
+              <span className="h-2 w-2 rounded-full bg-brand shadow-[0_0_10px_rgba(139,92,246,0.8)] transition-transform duration-300 group-hover:scale-125" />
             </Link>
           </div>
           
@@ -32,40 +34,41 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+                className="text-xs font-semibold uppercase tracking-widest text-muted transition-colors hover:text-foreground"
               >
                 {link.name}
               </Link>
             ))}
           </nav>
           
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center">
+          {/* Desktop Right (Theme Toggle + CTA) */}
+          <div className="hidden md:flex items-center gap-4">
+            <ThemeToggle />
             <Link 
               href="/contact"
-              className="inline-flex items-center justify-center h-9 px-4 text-sm font-medium transition-colors rounded-md bg-primary text-white hover:bg-primary-hover shadow-sm"
+              className="inline-flex items-center justify-center h-10 px-5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 rounded-full border border-brand/40 bg-brand-soft text-foreground hover:bg-brand hover:text-white hover:border-brand"
             >
-              Contact Us
+              Start Project
             </Link>
           </div>
           
-          {/* Mobile menu button */}
-          <div className="flex md:hidden">
+          {/* Mobile Actions */}
+          <div className="flex md:hidden items-center gap-3">
+            <ThemeToggle />
             <button
               type="button"
-              className="inline-flex items-center justify-center p-2 text-foreground/80 hover:bg-neutral-100 hover:text-foreground dark:hover:bg-neutral-800 rounded-md"
+              className="inline-flex items-center justify-center p-2.5 text-foreground hover:bg-surface-muted rounded-lg border border-border"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
             >
               <span className="sr-only">Open main menu</span>
-              {/* Icon placeholder (hamburger/close) */}
               {mobileMenuOpen ? (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
               )}
@@ -76,30 +79,35 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div id="mobile-menu" className="md:hidden border-t border-border bg-background">
+        <div id="mobile-menu" className="md:hidden border-t border-border bg-surface backdrop-blur-2xl">
           <Container>
-            <div className="space-y-1 px-2 pb-6 pt-4">
+            <div className="space-y-2 px-2 pb-8 pt-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="block rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                  className="block rounded-lg px-4 py-3 text-base font-semibold tracking-wide text-foreground hover:bg-surface-muted transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}
                 </Link>
               ))}
-              <Link
-                href="/contact"
-                className="block rounded-md px-3 py-2 text-base font-medium text-primary hover:bg-primary/10"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Contact Us
-              </Link>
+              <div className="pt-4">
+                <Link
+                  href="/contact"
+                  className="flex items-center justify-center w-full rounded-full py-3.5 text-sm font-semibold uppercase tracking-wider text-white bg-brand hover:bg-brand-hover transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Start a Project
+                </Link>
+              </div>
             </div>
           </Container>
         </div>
       )}
     </header>
-  )
+  );
 }
+
+
+

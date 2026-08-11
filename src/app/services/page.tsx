@@ -7,96 +7,124 @@ import { StaggerReveal } from "@/components/animations/stagger-reveal";
 import { CalEmbed } from "@/components/ui/cal-embed";
 
 export const metadata = {
-  title: "Services | Agency Portfolio",
-  description: "Web design and automation services tailored for your business.",
+  title: "Services & Capabilities",
+  description: "Bespoke web design, creative frontend development, and custom workflow automation.",
 };
+
+const serviceDetails = [
+  {
+    features: [
+      "Custom Editorial & Systemic UI/UX Design",
+      "Interactive Prototyping & Motion Specs",
+      "Design Systems & Component Specs",
+      "Conversion & Performance Optimization",
+    ]
+  },
+  {
+    features: [
+      "Next.js App Router Architecture",
+      "GSAP Motion & Scroll Physics",
+      "Headless CMS Integration",
+      "WCAG Accessibility Compliance",
+    ]
+  },
+  {
+    features: [
+      "Custom API & Webhook Bridges",
+      "Enterprise CRM Sync (HubSpot / Salesforce)",
+      "Automated Order & Inventory Pipelines",
+      "Serverless Workflows & Edge Functions",
+    ]
+  }
+];
 
 export default function Services() {
   return (
     <>
-      <Section className="bg-neutral-50 dark:bg-neutral-950 pt-24 md:pt-32 pb-16">
-        <Container className="max-w-3xl">
-          <ScrollReveal direction="up" distance={40} delay={0.2} playOnMount={true}>
-            <h1 className="text-h1 mb-6">Our Services</h1>
+      <Section className="bg-transparent pt-20 md:pt-32 pb-16">
+        <Container className="max-w-4xl">
+          <ScrollReveal direction="up" distance={40} delay={0.1} playOnMount={true}>
+            <span className="text-xs font-semibold tracking-widest text-brand uppercase mb-3 block">
+              CAPABILITIES & SERVICES
+            </span>
+            <h1 className="text-h1 mb-6">STUDIO SERVICES</h1>
             <p className="text-body-lg">
-              We provide specialized digital services that help businesses scale without the growing pains. From conversion-optimized websites to custom automation workflows, we build systems that work for you.
+              We design and engineer bespoke web solutions that eliminate friction, capture audience attention, and automate client operations for maximum scale.
             </p>
           </ScrollReveal>
         </Container>
       </Section>
 
-      <Section className="bg-surface pb-16 md:pb-24">
-        <Container className="max-w-4xl">
+      <Section className="bg-transparent pb-16 md:pb-24">
+        <Container className="max-w-5xl">
           <StaggerReveal className="space-y-12">
-            {servicesData.map((service, index) => (
-              <div 
-                key={service.id} 
-                id={service.id}
-                className="stagger-item flex flex-col md:flex-row gap-6 md:gap-12 p-8 rounded-3xl border border-border bg-background"
-              >
-                <div className="md:w-1/3">
-                  <div className="text-primary/20 font-heading text-5xl font-bold mb-4">
-                    {(index + 1).toString().padStart(2, '0')}
+            {servicesData.map((service, index) => {
+              const details = serviceDetails[index] || serviceDetails[0];
+              return (
+                <div 
+                  key={service.id} 
+                  id={service.id}
+                  className="stagger-item flex flex-col md:flex-row gap-8 md:gap-16 p-8 md:p-12 rounded-3xl border border-border bg-surface backdrop-blur-md shadow-sm dark:shadow-none transition-colors duration-300"
+                >
+                  <div className="md:w-1/3 flex flex-col justify-between">
+                    <div>
+                      <div className="text-brand/30 font-mono text-5xl font-bold mb-4">
+                        / 0{(index + 1).toString()}
+                      </div>
+                      <h2 className="text-h3">{service.title}</h2>
+                    </div>
+                    <div className="hidden md:block pt-8">
+                      <Link
+                        href="/contact"
+                        className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand hover:text-brand-hover transition-colors"
+                      >
+                        Inquire About This Service &rarr;
+                      </Link>
+                    </div>
                   </div>
-                  <h2 className="text-h3">{service.title}</h2>
+
+                  <div className="md:w-2/3 flex flex-col justify-between">
+                    <div>
+                      <p className="text-body-lg text-foreground mb-6">
+                        {service.description}
+                      </p>
+                      <p className="text-body text-muted mb-8">
+                        Our engineering team collaborates directly with your leadership to turn complex operational objectives into seamless, beautiful digital experiences.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-xs font-semibold tracking-widest text-muted uppercase mb-4">
+                        Key Deliverables
+                      </h3>
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {details.features.map((feature, i) => (
+                          <li key={i} className="flex items-center gap-3 text-body-sm text-foreground">
+                            <span className="w-1.5 h-1.5 rounded-full bg-brand" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <div className="md:w-2/3 flex flex-col justify-center">
-                  <p className="text-body-lg mb-6">{service.description}</p>
-                  <p className="text-body mb-6">
-                    [Placeholder extended details] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.
-                  </p>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-                    <li className="flex items-center gap-2 text-body-sm">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                      [Feature 1]
-                    </li>
-                    <li className="flex items-center gap-2 text-body-sm">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                      [Feature 2]
-                    </li>
-                    <li className="flex items-center gap-2 text-body-sm">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                      [Feature 3]
-                    </li>
-                    <li className="flex items-center gap-2 text-body-sm">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                      [Feature 4]
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </StaggerReveal>
         </Container>
       </Section>
 
-      <Section className="bg-neutral-50 dark:bg-neutral-950 border-t border-border">
+      <Section className="bg-transparent border-t border-border py-24">
         <Container className="max-w-4xl text-center">
-          <ScrollReveal direction="up" distance={40}>
-            <h2 className="text-h2 mb-4">Book Our Services</h2>
-            <p className="text-body-lg mb-10">
-              Ready to streamline your operations or overhaul your digital presence? We're currently taking on new projects.
+          <ScrollReveal direction="up" distance={30}>
+            <span className="text-xs font-semibold tracking-widest text-brand uppercase mb-3 block">
+              COLLABORATION
+            </span>
+            <h2 className="text-h2 mb-4">SCHEDULE A CONSULTATION</h2>
+            <p className="text-body-lg mb-12 max-w-xl mx-auto">
+              Ready to elevate your digital presence or automate internal processes? Pick a time directly on our calendar.
             </p>
-            <div className="p-8 rounded-2xl border border-border bg-background mb-12">
-              <h3 className="text-h4 mb-4">Project Inquiry Form</h3>
-              <p className="text-body-sm mb-6 max-w-lg mx-auto">
-                [Placeholder - In Phase 6, a detailed onboarding/booking form embed will go here]
-              </p>
-              <Link 
-                href="/contact"
-                className="inline-flex items-center justify-center h-11 px-8 text-base font-medium transition-colors rounded-md bg-primary text-white hover:bg-primary-hover shadow-sm"
-              >
-                Go to Contact Form
-              </Link>
-            </div>
-          </ScrollReveal>
-          
-          <ScrollReveal direction="up" distance={40}>
-            <h2 className="text-h2 mt-16 mb-4">Schedule a Meeting</h2>
-            <p className="text-body-lg mb-10">
-              Prefer to chat first? Book a quick 15-minute discovery call directly on our calendar.
-            </p>
-            <div className="rounded-2xl border border-border bg-background w-full">
+            <div className="rounded-2xl border border-border bg-surface backdrop-blur-md p-4 w-full">
               <CalEmbed />
             </div>
           </ScrollReveal>
@@ -105,3 +133,6 @@ export default function Services() {
     </>
   );
 }
+
+
+

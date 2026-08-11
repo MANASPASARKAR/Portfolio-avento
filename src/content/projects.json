@@ -6,7 +6,7 @@
     "fullDescription": "A comprehensive automation solution linking a Shopify storefront with a custom ERP. Reduced manual entry by 90% and accelerated fulfillment times.",
     "techStack": ["Next.js", "Zapier", "Node.js", "Shopify API"],
     "githubUrl": "https://github.com/placeholder/repo-1",
-    "image": "/placeholder-project-1.jpg"
+    "image": "/project-ecommerce.jpg"
   },
   {
     "slug": "marketing-agency-redesign",
@@ -15,7 +15,7 @@
     "fullDescription": "Complete brand overhaul and web redesign for a top-tier marketing agency, featuring smooth scroll physics and complex GSAP animations.",
     "techStack": ["React", "GSAP", "Tailwind CSS"],
     "githubUrl": "https://github.com/placeholder/repo-2",
-    "image": "/placeholder-project-2.jpg"
+    "image": "/project-agency.jpg"
   },
   {
     "slug": "saas-dashboard",
@@ -24,7 +24,7 @@
     "fullDescription": "Built a scalable and responsive dashboard interface to display complex datasets in real-time, focusing on user experience and accessibility.",
     "techStack": ["Next.js", "TypeScript", "Recharts", "Tailwind CSS"],
     "githubUrl": "https://github.com/placeholder/repo-3",
-    "image": "/placeholder-project-3.jpg"
+    "image": "/project-saas.jpg"
   },
   {
     "slug": "crm-integration",
@@ -33,6 +33,6 @@
     "fullDescription": "Developed a robust middleware service to synchronize customer data bidirectionally between Hubspot CRM and a legacy internal management system.",
     "techStack": ["Python", "FastAPI", "Hubspot API"],
     "githubUrl": "https://github.com/placeholder/repo-4",
-    "image": "/placeholder-project-4.jpg"
+    "image": "/project-crm.jpg"
   }
 ]

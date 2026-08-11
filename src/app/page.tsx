@@ -1,124 +1,154 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
-import { Button } from "@/components/ui/button";
 import servicesData from "@/content/services.json";
 import projectsData from "@/content/projects.json";
 import { ScrollReveal } from "@/components/animations/scroll-reveal";
-import { StaggerReveal } from "@/components/animations/stagger-reveal";
-import { ParallaxImage } from "@/components/animations/parallax-image";
+import { PortfolioStack } from "@/components/ui/portfolio-stack";
 
 export default function Home() {
-  const featuredProjects = projectsData.slice(0, 3);
-  
   return (
     <>
       {/* Hero Section */}
-      <Section className="bg-neutral-50 dark:bg-neutral-950 pt-24 md:pt-32 pb-16 md:pb-24">
-        <Container className="text-center max-w-4xl">
-          <ScrollReveal direction="up" distance={40} delay={0.2} playOnMount={true}>
-            <h1 className="text-h1 mb-6">
-              We Build Digital Experiences That Scale
-            </h1>
-            <p className="text-body-lg mb-10 max-w-2xl mx-auto">
-              A boutique digital agency specializing in high-performance web design and custom automation workflows.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link 
-                href="/contact"
-                className="inline-flex items-center justify-center h-11 px-8 text-base font-medium transition-colors rounded-md bg-primary text-white hover:bg-primary-hover shadow-sm"
-              >
-                Start a Project
-              </Link>
-              <Link 
-                href="/projects"
-                className="inline-flex items-center justify-center h-11 px-8 text-base font-medium transition-colors rounded-md border border-border bg-transparent hover:bg-neutral-100 dark:hover:bg-neutral-800 text-foreground"
-              >
-                View Our Work
-              </Link>
+      <Section className="bg-transparent pt-20 md:pt-32 pb-24 md:pb-36 min-h-[85vh] flex items-center">
+        <Container className="max-w-6xl">
+          <ScrollReveal direction="up" distance={40} delay={0.1} playOnMount={true}>
+            <div className="flex flex-col items-start text-left">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand/30 bg-brand-soft text-xs font-mono font-semibold uppercase tracking-widest text-brand mb-8">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand animate-pulse" />
+                Creative Web Studio & Automation Architecture
+              </span>
+              
+              <h1 className="text-hero mb-8">
+                We Build <br className="hidden sm:inline" />
+                Digital Experiences <br />
+                <span className="bg-gradient-to-r from-foreground via-foreground to-brand bg-clip-text text-transparent">
+                  People Remember.
+                </span>
+              </h1>
+              
+              <p className="text-body-lg mb-12 max-w-2xl font-normal leading-relaxed">
+                A high-performance digital engineering studio. We merge editorial design, motion physics, and custom automation architecture for ambitious brands.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-5 w-full sm:w-auto">
+                <Link 
+                  href="/contact"
+                  className="inline-flex items-center justify-center h-14 px-9 text-sm font-semibold uppercase tracking-widest transition-all duration-300 rounded-full bg-foreground text-background hover:bg-brand hover:text-white shadow-lg"
+                >
+                  Start a Project
+                </Link>
+                <Link 
+                  href="/projects"
+                  className="inline-flex items-center justify-center h-14 px-9 text-sm font-semibold uppercase tracking-widest transition-all duration-300 rounded-full border border-border bg-surface-muted text-foreground hover:border-brand"
+                >
+                  Explore Portfolio &rarr;
+                </Link>
+              </div>
             </div>
           </ScrollReveal>
         </Container>
       </Section>
 
-      {/* What We Do */}
-      <Section className="bg-surface">
+      {/* Selected Work Portfolio Presentation */}
+      <Section className="bg-transparent py-24 md:py-36">
         <Container>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-h2 mb-4">Our Services</h2>
-            <p className="text-body">Strategic solutions designed to eliminate friction and accelerate your growth.</p>
-          </div>
-          <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {servicesData.map((service) => (
-              <div key={service.id} className="stagger-item p-8 rounded-2xl border border-border bg-background shadow-card hover:shadow-card-hover transition-shadow">
-                <h3 className="text-h4 mb-3">{service.title}</h3>
-                <p className="text-body-sm">{service.description}</p>
-              </div>
-            ))}
-          </StaggerReveal>
-        </Container>
-      </Section>
-
-      {/* Featured Projects */}
-      <Section className="bg-neutral-50 dark:bg-neutral-950">
-        <Container>
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-6 border-b border-border pb-10">
             <div>
-              <h2 className="text-h2 mb-4">Selected Work</h2>
-              <p className="text-body max-w-2xl">A look at some of our recent projects and technical implementations.</p>
+              <span className="text-xs font-mono font-semibold tracking-widest text-brand uppercase mb-3 block">
+                SELECTED WORK
+              </span>
+              <h2 className="text-h1">OUR PORTFOLIO</h2>
             </div>
             <Link 
               href="/projects"
-              className="text-primary font-medium hover:underline"
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-muted hover:text-foreground transition-colors"
             >
-              View All Projects &rarr;
+              View All Work ({projectsData.length}) &rarr;
             </Link>
           </div>
           
-          <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProjects.map((project) => (
-              <Link href={`/projects/${project.slug}`} key={project.slug} className="stagger-item group flex flex-col rounded-2xl overflow-hidden border border-border bg-background transition-colors hover:border-primary/50">
-                <div className="aspect-[4/3] bg-neutral-200 dark:bg-neutral-800 relative w-full flex items-center justify-center text-neutral-400 overflow-hidden">
-                  <ParallaxImage speed={0.15}>
-                    <div className="absolute inset-0 bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center">
-                      <span>[Image Placeholder]</span>
-                    </div>
-                  </ParallaxImage>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-h4 mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-                  <p className="text-body-sm mb-4 line-clamp-2">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.techStack.slice(0, 3).map(tech => (
-                      <span key={tech} className="text-xs font-medium bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded-md text-neutral-600 dark:text-neutral-300">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </StaggerReveal>
+          <PortfolioStack projects={projectsData} />
         </Container>
       </Section>
 
-      {/* CTA Section */}
-      <Section className="bg-primary-950 text-white">
-        <Container className="text-center max-w-3xl">
+      {/* Services Section */}
+      <Section className="bg-transparent py-24 md:py-36">
+        <Container className="max-w-6xl">
+          <div className="border-b border-border pb-10 mb-16">
+            <span className="text-xs font-mono font-semibold tracking-widest text-brand uppercase mb-3 block">
+              CAPABILITIES
+            </span>
+            <h2 className="text-h1">SERVICES & ARCHITECTURE</h2>
+          </div>
+
+          <div className="divide-y divide-border">
+            {servicesData.map((service, index) => (
+              <div 
+                key={service.id}
+                className="group py-12 md:py-16 transition-all duration-500 hover:px-4"
+              >
+                <div className="grid grid-cols-1 md:grid-cols-12 items-start gap-6 md:gap-8">
+                  <div className="md:col-span-2 font-mono text-sm text-muted group-hover:text-brand transition-colors">
+                    / 0{(index + 1).toString()}
+                  </div>
+                  <div className="md:col-span-5">
+                    <h3 className="text-h3 group-hover:text-brand transition-colors">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <div className="md:col-span-5 flex flex-col justify-between">
+                    <p className="text-body mb-6">
+                      {service.description}
+                    </p>
+                    <Link
+                      href="/services"
+                      className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted group-hover:text-foreground transition-colors"
+                    >
+                      Learn More <span>&rarr;</span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* CTA / Closing Section */}
+      <Section className="bg-transparent py-28 md:py-44">
+        <Container className="text-center max-w-4xl">
           <ScrollReveal direction="up" distance={30}>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">Ready to scale your business?</h2>
-            <p className="text-lg md:text-xl text-primary-100 mb-10 max-w-2xl mx-auto">
-              Book a discovery call today to discuss how our web design and automation services can help you achieve your goals.
+            <span className="text-xs font-mono font-semibold tracking-widest text-brand uppercase mb-6 block">
+              START A CONVERSATION
+            </span>
+            <h2 className="text-hero mb-10">
+              LET’S BUILD <br />
+              SOMETHING GREAT.
+            </h2>
+            <p className="text-body-lg mb-12 max-w-xl mx-auto">
+              Have a custom project in mind? We're taking on select clients for website design, creative development, and automation architecture.
             </p>
-            <Link 
-              href="/services"
-              className="inline-flex items-center justify-center h-14 px-8 text-lg font-medium transition-colors rounded-md bg-white text-primary-950 hover:bg-neutral-100 shadow-sm"
-            >
-              Book a Call
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+              <Link 
+                href="/contact"
+                className="inline-flex items-center justify-center h-14 px-10 text-sm font-semibold uppercase tracking-widest transition-all duration-300 rounded-full bg-brand text-white hover:bg-brand-hover shadow-lg"
+              >
+                Get in Touch
+              </Link>
+              <Link 
+                href="/services"
+                className="inline-flex items-center justify-center h-14 px-10 text-sm font-semibold uppercase tracking-widest transition-all duration-300 rounded-full border border-border bg-surface-muted text-foreground hover:border-brand"
+              >
+                Book Discovery Call
+              </Link>
+            </div>
           </ScrollReveal>
         </Container>
       </Section>
     </>
   );
 }
+
+
+

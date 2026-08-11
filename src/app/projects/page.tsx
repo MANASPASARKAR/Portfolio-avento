@@ -1,48 +1,71 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import projectsData from "@/content/projects.json";
 import testimonialsData from "@/content/testimonials.json";
 import { ScrollReveal } from "@/components/animations/scroll-reveal";
 import { StaggerReveal } from "@/components/animations/stagger-reveal";
-import { ParallaxImage } from "@/components/animations/parallax-image";
 import { TestimonialCarousel } from "@/components/ui/testimonial-carousel";
 
 export const metadata = {
-  title: "Projects | Agency Portfolio",
-  description: "Explore our recent web design and automation projects.",
+  title: "Selected Work",
+  description: "Explore our recent web engineering, design systems, and workflow automation implementations.",
 };
 
 export default function Projects() {
   return (
     <>
-      <Section className="bg-neutral-50 dark:bg-neutral-950 pt-24 md:pt-32 pb-16">
+      <Section className="bg-transparent pt-20 md:pt-32 pb-16">
         <Container>
-          <ScrollReveal direction="up" distance={40} delay={0.2} playOnMount={true}>
-            <div className="max-w-3xl mb-12">
-              <h1 className="text-h1 mb-6">Our Work</h1>
+          <ScrollReveal direction="up" distance={40} delay={0.1} playOnMount={true}>
+            <div className="max-w-3xl mb-16">
+              <span className="text-xs font-semibold tracking-widest text-brand uppercase mb-3 block">
+                PORTFOLIO
+              </span>
+              <h1 className="text-h1 mb-6">SELECTED WORK</h1>
               <p className="text-body-lg">
-                A selection of our recent projects, from high-performance marketing sites to complex operational automation systems.
+                A showcase of custom digital experiences, editorial design systems, and enterprise automation infrastructure built for client scale.
               </p>
             </div>
           </ScrollReveal>
           
-          <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
-            {projectsData.map((project) => (
-              <Link href={`/projects/${project.slug}`} key={project.slug} className="stagger-item group flex flex-col rounded-2xl overflow-hidden border border-border bg-background transition-colors hover:border-primary/50">
-                <div className="aspect-video bg-neutral-200 dark:bg-neutral-800 relative w-full flex items-center justify-center text-neutral-400 overflow-hidden">
-                  <ParallaxImage speed={0.15}>
-                    <div className="absolute inset-0 bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center">
-                      <span>[Image Placeholder: {project.image}]</span>
-                    </div>
-                  </ParallaxImage>
+          <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            {projectsData.map((project, index) => (
+              <Link 
+                href={`/projects/${project.slug}`} 
+                key={project.slug} 
+                className="stagger-item group flex flex-col rounded-2xl overflow-hidden border border-border bg-surface backdrop-blur-md shadow-sm dark:shadow-none transition-all duration-500 hover:border-brand/40 hover:shadow-xl"
+              >
+                <div className="aspect-[16/10] bg-surface-muted relative w-full overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={index < 2}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60 pointer-events-none" />
                 </div>
-                <div className="p-6 md:p-8">
-                  <h2 className="text-h3 mb-3 group-hover:text-primary transition-colors">{project.title}</h2>
-                  <p className="text-body mb-6 line-clamp-3">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mt-auto">
+                
+                <div className="p-8 flex flex-col flex-1 justify-between">
+                  <div>
+                    <div className="flex items-center justify-between text-xs font-mono text-muted mb-4">
+                      <span>PROJECT 0{index + 1}</span>
+                      <span>{project.slug}</span>
+                    </div>
+                    <h2 className="text-h3 mb-3 group-hover:text-brand transition-colors">
+                      {project.title}
+                    </h2>
+                    <p className="text-body mb-6 line-clamp-2">
+                      {project.description}
+                    </p>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2 pt-4 border-t border-border">
                     {project.techStack.map(tech => (
-                      <span key={tech} className="text-xs font-medium bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-md text-neutral-600 dark:text-neutral-300">
+                      <span key={tech} className="text-xs font-semibold px-3 py-1 rounded-full border border-border text-foreground bg-surface-muted">
                         {tech}
                       </span>
                     ))}
@@ -51,17 +74,21 @@ export default function Projects() {
               </Link>
             ))}
           </StaggerReveal>
+
         </Container>
       </Section>
 
-      <Section className="bg-surface">
+      <Section className="bg-transparent py-24 border-t border-border">
         <Container>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-h2 mb-4">Client Testimonials</h2>
-            <p className="text-body">What our partners have to say about working with us.</p>
+            <span className="text-xs font-semibold tracking-widest text-brand uppercase mb-3 block">
+              TESTIMONIALS
+            </span>
+            <h2 className="text-h2 mb-4">CLIENT FEEDBACK</h2>
+            <p className="text-body">What leading teams say about partnering with AVENTO.</p>
           </div>
           
-          <ScrollReveal direction="up" distance={40}>
+          <ScrollReveal direction="up" distance={30}>
             <TestimonialCarousel testimonials={testimonialsData} />
           </ScrollReveal>
         </Container>
@@ -69,3 +96,5 @@ export default function Projects() {
     </>
   );
 }
+
+

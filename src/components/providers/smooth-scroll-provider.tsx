@@ -28,13 +28,14 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
     // Skip Lenis if reduced motion is preferred
     if (isReducedMotion) return;
 
-    // Initialize Lenis
+    // Initialize Lenis with ultra-smooth lerp & duration
     const lenis = new Lenis({
-      // Default options are usually fine, but you can tweak them
-      lerp: 0.1,
-      duration: 1.2,
+      lerp: 0.07,
+      duration: 1.4,
       smoothWheel: true,
+      wheelMultiplier: 0.9,
     });
+
 
     // Sync ScrollTrigger with Lenis
     lenis.on("scroll", ScrollTrigger.update);
@@ -48,8 +49,18 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
     // Disable GSAP's lag smoothing to prevent visual jumps with Lenis
     gsap.ticker.lagSmoothing(0);
 
+    // Set up ResizeObserver to refresh ScrollTrigger when page height changes
+    // This is crucial for fixing scroll breakage when components dynamically load or change height
+    const resizeObserver = new ResizeObserver(() => {
+      ScrollTrigger.refresh();
+    });
+    
+    // We observe body. In a Next.js app, body height changing means we need to recalculate.
+    resizeObserver.observe(document.body);
+
     // Cleanup on unmount
     return () => {
+      resizeObserver.disconnect();
       // Un-sync ScrollTrigger
       lenis.off("scroll", ScrollTrigger.update);
       // Remove ticker
