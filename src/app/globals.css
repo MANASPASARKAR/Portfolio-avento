@@ -26,24 +26,24 @@
 }
 
 :root {
-  /* Light Theme Tokens — Sophisticated Warm Off-White Alabaster Environment */
-  --background: #f6f5f8;
+  /* Light Theme Tokens — Rich Tinted Atmosphere & Darker Soft Canvas */
+  --background: #e4e0ee;
   --foreground: #09090b;
-  --surface: rgba(255, 255, 255, 0.88);
-  --surface-muted: rgba(240, 238, 246, 0.8);
-  --border: rgba(0, 0, 0, 0.09);
-  --muted: #52525b;
+  --surface: rgba(255, 255, 255, 0.85);
+  --surface-muted: rgba(228, 222, 240, 0.85);
+  --border: rgba(0, 0, 0, 0.11);
+  --muted: #4b4b52;
 
   --brand: #7c3aed;
-  --brand-soft: rgba(124, 58, 237, 0.12);
+  --brand-soft: rgba(124, 58, 237, 0.15);
   --brand-hover: #6d28d9;
 
-  --atmosphere-violet: rgba(124, 58, 237, 0.22);
-  --atmosphere-cyan: rgba(8, 145, 178, 0.20);
-  --atmosphere-pink: rgba(219, 39, 119, 0.16);
-  --atmosphere-warm: rgba(217, 119, 6, 0.15);
+  --atmosphere-violet: rgba(139, 44, 255, 0.38);
+  --atmosphere-cyan: rgba(6, 175, 220, 0.35);
+  --atmosphere-pink: rgba(236, 28, 140, 0.32);
+  --atmosphere-warm: rgba(245, 124, 0, 0.30);
 
-  --grain-opacity: 0.025;
+  --grain-opacity: 0.035;
   --grain-blend: multiply;
 }
 

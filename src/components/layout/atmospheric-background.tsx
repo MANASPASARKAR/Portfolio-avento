@@ -82,7 +82,7 @@ export function AtmosphericBackground() {
     >
       <div 
         ref={orb1Ref}
-        className="absolute top-[-10%] right-[-10%] w-[70vw] h-[70vw] rounded-full opacity-60 mix-blend-normal"
+        className="absolute top-[-10%] right-[-10%] w-[70vw] h-[70vw] rounded-full opacity-75 mix-blend-normal"
         style={{
           background: "var(--atmosphere-violet)",
           filter: "blur(120px)",
@@ -91,7 +91,7 @@ export function AtmosphericBackground() {
       />
       <div 
         ref={orb2Ref}
-        className="absolute top-[30%] left-[-20%] w-[60vw] h-[60vw] rounded-full opacity-50 mix-blend-normal"
+        className="absolute top-[30%] left-[-20%] w-[60vw] h-[60vw] rounded-full opacity-70 mix-blend-normal"
         style={{
           background: "var(--atmosphere-cyan)",
           filter: "blur(130px)",
@@ -100,7 +100,7 @@ export function AtmosphericBackground() {
       />
       <div 
         ref={orb3Ref}
-        className="absolute bottom-[-20%] right-[-15%] w-[80vw] h-[80vw] rounded-full opacity-40 mix-blend-normal"
+        className="absolute bottom-[-20%] right-[-15%] w-[80vw] h-[80vw] rounded-full opacity-60 mix-blend-normal"
         style={{
           background: "var(--atmosphere-pink)",
           filter: "blur(140px)",
@@ -109,7 +109,7 @@ export function AtmosphericBackground() {
       />
       <div 
         ref={orb4Ref}
-        className="absolute top-[60%] left-[20%] w-[50vw] h-[50vw] rounded-full opacity-40 mix-blend-normal"
+        className="absolute top-[60%] left-[20%] w-[50vw] h-[50vw] rounded-full opacity-60 mix-blend-normal"
         style={{
           background: "var(--atmosphere-warm)",
           filter: "blur(110px)",
@@ -118,7 +118,7 @@ export function AtmosphericBackground() {
       />
       <div 
         ref={orb5Ref}
-        className="absolute top-[-20%] left-[40%] w-[90vw] h-[90vw] rounded-full opacity-30 mix-blend-normal"
+        className="absolute top-[-20%] left-[40%] w-[90vw] h-[90vw] rounded-full opacity-50 mix-blend-normal"
         style={{
           background: "var(--atmosphere-violet)",
           filter: "blur(150px)",
