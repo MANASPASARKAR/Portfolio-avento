@@ -4,8 +4,8 @@ import { Container } from "@/components/ui/container";
 const footerLinks = {
   services: [
     { name: "Web Design & Development", href: "/services#web-design" },
+    { name: "SEO & GEO", href: "/services#seo-geo" },
     { name: "Workflow Automation", href: "/services#automation" },
-    { name: "Systems Architecture", href: "/services#architecture" },
   ],
   company: [
     { name: "About Studio", href: "/about" },

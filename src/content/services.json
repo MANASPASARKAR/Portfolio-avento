@@ -2,16 +2,25 @@
   {
     "id": "web-design",
     "title": "Custom Web Design & Development",
-    "description": "High-performance, beautifully designed websites built for conversion and brand authority."
+    "subtitle": "A website built to win you business.",
+    "description": "We design and build fast, modern websites that make your brand look credible, explain what you do clearly, and turn visitors into customers.",
+    "status": "AVAILABLE",
+    "isAvailable": true
+  },
+  {
+    "id": "seo-geo",
+    "title": "SEO & GEO",
+    "subtitle": "Be found when people are looking for you.",
+    "description": "Improve how your business appears across Google and modern AI search and answer tools so customers find you when they're ready to buy.",
+    "status": "AVAILABLE",
+    "isAvailable": true
   },
   {
     "id": "automation",
     "title": "Workflow Automation",
-    "description": "Custom scripts and integrations to eliminate manual tasks and streamline operations."
-  },
-  {
-    "id": "seo",
-    "title": "SEO & Content Strategy",
-    "description": "Data-driven optimization and content architectures that rank and drive organic traffic."
+    "subtitle": "Less busywork. More business.",
+    "description": "Custom automation solutions connecting the systems you already use to take repetitive work off your team's plate.",
+    "status": "IN DEVELOPMENT",
+    "isAvailable": false
   }
 ]

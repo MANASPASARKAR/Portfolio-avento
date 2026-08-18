@@ -89,23 +89,36 @@ export default function Home() {
                 className="group py-12 md:py-16 transition-all duration-500 hover:px-4"
               >
                 <div className="grid grid-cols-1 md:grid-cols-12 items-start gap-6 md:gap-8">
-                  <div className="md:col-span-2 font-mono text-sm text-muted group-hover:text-brand transition-colors">
+                  <div className="md:col-span-2 font-mono text-sm text-muted group-hover:text-brand transition-colors flex items-center gap-2">
                     / 0{(index + 1).toString()}
                   </div>
-                  <div className="md:col-span-5">
-                    <h3 className="text-h3 group-hover:text-brand transition-colors">
-                      {service.title}
-                    </h3>
+                  <div className="md:col-span-5 space-y-2">
+                    <div className="flex flex-wrap items-center gap-2.5">
+                      <h3 className="text-h3 group-hover:text-brand transition-colors">
+                        {service.title}
+                      </h3>
+                      {!service.isAvailable && (
+                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-[10px] font-mono font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+                          <span className="w-1 h-1 rounded-full bg-amber-500 animate-pulse" />
+                          IN DEVELOPMENT
+                        </span>
+                      )}
+                    </div>
+                    {service.subtitle && (
+                      <p className="text-xs font-mono font-semibold text-brand uppercase tracking-wider">
+                        {service.subtitle}
+                      </p>
+                    )}
                   </div>
                   <div className="md:col-span-5 flex flex-col justify-between">
                     <p className="text-body mb-6">
                       {service.description}
                     </p>
                     <Link
-                      href="/services"
+                      href={`/services#${service.id}`}
                       className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted group-hover:text-foreground transition-colors"
                     >
-                      Learn More <span>&rarr;</span>
+                      Explore Service <span>&rarr;</span>
                     </Link>
                   </div>
                 </div>
