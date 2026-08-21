@@ -1,38 +1,56 @@
 [
   {
-    "slug": "ecommerce-automation",
-    "title": "E-Commerce Workflow Automation",
-    "description": "Automated order fulfillment and inventory tracking system.",
-    "fullDescription": "A comprehensive automation solution linking a Shopify storefront with a custom ERP. Reduced manual entry by 90% and accelerated fulfillment times.",
-    "techStack": ["Next.js", "Zapier", "Node.js", "Shopify API"],
+    "slug": "taekwondo-academy-website",
+    "title": "Taekwondo Academy Website",
+    "description": "Modern marketing site for a Taekwondo dojang with photo galleries and an achievements showcase.",
+    "fullDescription": "A responsive marketing website built for a Taekwondo academy, featuring an About page, an Achievements section for competition history, and a Gallery with auto-playing image carousels for \"Academy Moments\" and \"Competition Glimpses,\" complete with hover-activated navigation arrows and indicator dots.\n\nBuilt with React, TypeScript, and Tailwind CSS on a Vite pipeline, using shadcn/ui for consistent, accessible UI components. A lightweight Express backend handles contact form email delivery.",
+    "techStack": ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "Express", "Nodemailer"],
     "githubUrl": "https://github.com/placeholder/repo-1",
-    "image": "/project-ecommerce.jpg"
-  },
-  {
-    "slug": "marketing-agency-redesign",
-    "title": "Marketing Agency Redesign",
-    "description": "High-performance portfolio site with custom animations.",
-    "fullDescription": "Complete brand overhaul and web redesign for a top-tier marketing agency, featuring smooth scroll physics and complex GSAP animations.",
-    "techStack": ["React", "GSAP", "Tailwind CSS"],
-    "githubUrl": "https://github.com/placeholder/repo-2",
     "image": "/project-agency.jpg"
   },
   {
-    "slug": "saas-dashboard",
-    "title": "SaaS Analytics Dashboard",
-    "description": "Real-time data visualization dashboard for a B2B SaaS platform.",
-    "fullDescription": "Built a scalable and responsive dashboard interface to display complex datasets in real-time, focusing on user experience and accessibility.",
-    "techStack": ["Next.js", "TypeScript", "Recharts", "Tailwind CSS"],
-    "githubUrl": "https://github.com/placeholder/repo-3",
-    "image": "/project-saas.jpg"
+    "slug": "devjrnl",
+    "title": "DevJrnl",
+    "description": "A personal developer journal app for logging daily development work.",
+    "fullDescription": "A developer journaling application designed to help track daily development work, notes, and progress over time in one place.\n\nStructured as a client/server monorepo, with the client and server running concurrently during development and deployed together as a single app.",
+    "techStack": ["React", "Vite", "Node.js"],
+    "githubUrl": "https://github.com/placeholder/repo-2",
+    "image": "/devjrnl.png"
   },
   {
-    "slug": "crm-integration",
-    "title": "Custom CRM Integration",
-    "description": "Seamless data syncing between Hubspot and internal tools.",
-    "fullDescription": "Developed a robust middleware service to synchronize customer data bidirectionally between Hubspot CRM and a legacy internal management system.",
-    "techStack": ["Python", "FastAPI", "Hubspot API"],
+    "slug": "automated-swimming-slot-booking",
+    "title": "Automated Swimming Slot Booking",
+    "description": "Automation script that books a daily swimming slot the instant it opens.",
+    "fullDescription": "An automation script that logs into a college booking portal and reserves the daily 5pm swimming slot the moment it becomes available, removing the need to manually race to book a time-sensitive, limited slot every day.\n\nBuilt with Python and Playwright for reliable browser automation, containerized with Docker for consistent scheduled execution, with Resend wired in to send booking confirmation emails automatically.",
+    "techStack": ["Python", "Playwright", "Docker", "Resend"],
+    "githubUrl": "https://github.com/placeholder/repo-3",
+    "image": "/swimming-bot.png"
+  },
+  {
+    "slug": "ai-vendor-report-analyzer",
+    "title": "AI Vendor Report Analyzer",
+    "description": "AI-powered dashboard that scores vendor completion reports against a project's Scope of Work.",
+    "fullDescription": "An AI-powered admin portal that lets an admin upload a project's Scope of Work document alongside completion reports from multiple vendors, then submits them together to Google's Gemini API for automated, side-by-side evaluation.\n\nFor each vendor, the system extracts positives, negatives, and a completion score with supporting reasoning, ranks vendors accordingly, and lets the admin export the full comparison as a formatted PDF report.",
+    "techStack": ["React", "React Router", "Tailwind CSS", "Express", "Multer", "Google Gemini API", "Firebase Auth"],
     "githubUrl": "https://github.com/placeholder/repo-4",
-    "image": "/project-crm.jpg"
+    "image": "/vendor-analysis.png"
+  },
+  {
+    "slug": "core-java-interactive-workshop",
+    "title": "Core Java Interactive Workshop",
+    "description": "Custom-built interactive slide engine for teaching Core Java concepts.",
+    "fullDescription": "A custom-built interactive presentation engine for teaching Core Java, going well beyond static slides — with checkable progress tracking, syntax-highlighted code blocks, and hands-on practice on nearly every slide, including conceptual Q&A, coding drills, output predictions, and bug-debugging challenges with toggleable solution reveals.\n\nBuilt entirely in vanilla JavaScript, HTML, and CSS with no frameworks, including a custom flowchart renderer built purely in CSS (skewed parallelograms, rotated diamonds) and a dedicated Projector Mode that scales up typography for classroom visibility, with progress and theme preferences persisted locally between sessions.",
+    "techStack": ["JavaScript", "HTML5", "CSS3"],
+    "githubUrl": "https://github.com/placeholder/repo-5",
+    "image": "/project-placeholder-5.jpg"
+  },
+  {
+    "slug": "complete-python-bootcamp",
+    "title": "Complete Python Bootcamp",
+    "description": "165+ slide interactive Python bootcamp covering fundamentals through data science.",
+    "fullDescription": "A 165+ slide interactive presentation covering a complete Python bootcamp — from language fundamentals through advanced topics like object-oriented programming, NumPy, and Pandas — organized into 18 modules across a 30-day curriculum, with distinctly styled concept, example, tip, mistake, interview, and practice slide types.\n\nBuilt on the Reveal.js presentation framework with a fully custom design system, paired with Python scripts using Matplotlib that generate the bar, line, pie, and subplot chart visuals used throughout the data-visualization modules.",
+    "techStack": ["Reveal.js", "JavaScript", "Python", "Matplotlib", "HTML/CSS"],
+    "githubUrl": "https://github.com/placeholder/repo-6",
+    "image": "/project-placeholder-6.jpg"
   }
 ]

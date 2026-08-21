@@ -80,7 +80,8 @@ export function PortfolioStack({ projects }: PortfolioStackProps) {
             className="origin-top"
             style={{ willChange: "transform, opacity" }}
           >
-          <div className="border border-border bg-surface backdrop-blur-xl rounded-2xl overflow-hidden shadow-xl dark:shadow-[0_25px_60px_rgba(0,0,0,0.8)] transition-all duration-500 hover:border-brand/40">
+          <div className="border border-border bg-surface backdrop-blur-xl rounded-2xl overflow-hidden shadow-xl dark:shadow-[0_25px_60px_rgba(0,0,0,0.8)] transition-all duration-500 hover:border-brand/40 relative group/card">
+            <Link href={`/projects/${project.slug}`} className="absolute inset-0 z-10" aria-label={`View case study for ${project.title}`} />
             <div className="grid grid-cols-1 lg:grid-cols-12">
               {/* Screenshot Display — 7 cols on desktop */}
               <div className="lg:col-span-7 aspect-[16/10] relative overflow-hidden bg-surface-muted">
@@ -128,15 +129,12 @@ export function PortfolioStack({ projects }: PortfolioStackProps) {
                     ))}
                   </div>
 
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="inline-flex items-center gap-3 text-sm font-bold text-foreground hover:text-brand transition-colors group/link"
-                  >
+                  <div className="inline-flex items-center gap-3 text-sm font-bold text-foreground group-hover/card:text-brand transition-colors">
                     Explore Case Study
-                    <span className="w-7 h-7 rounded-full border border-border flex items-center justify-center text-xs group-hover/link:border-brand group-hover/link:bg-brand-soft transition-all">
+                    <span className="w-7 h-7 rounded-full border border-border flex items-center justify-center text-xs group-hover/card:border-brand group-hover/card:bg-brand-soft transition-all">
                       →
                     </span>
-                  </Link>
+                  </div>
                 </div>
 
               </div>
